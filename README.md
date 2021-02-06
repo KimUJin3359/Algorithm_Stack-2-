@@ -60,3 +60,30 @@ void quick_sort(int a[], int begin, int end)
   }
 }
 ```
+
+#### 관련 문제
+[1.Broken Calculator](https://github.com/KimUJin3359/Stack-2-/tree/master/Broken_Calculator)
+- 계산기의 튼이 많이 고장 나서 몇 개의 숫자 버튼과 곱하기 버튼, 계산 버튼밖에 남아있지 않음
+- 숫자 X를 계산하고 싶을 때, 눌러야 하는 최소 버튼의 수를 구하는 문제
+- 접근 방법
+  - 만들 수 있는 숫자를 판단할 수 있는 배열생성(index = 만들 수 있는 숫자, value = 만들기 위해 버튼을 눌러야 하는 횟수)
+  - 백트래킹을 통해 arr을 채워넣음
+    - 가지치기 조건 : 만들어진 값이 찾아야 되는 값보다 큰 경우 / 만들 값의 길이가 찾아야 되는 값의 길이보다 긴 경우)
+  - 채워진 배열의 큰 수(찾아야되는 값 보다 작거나 같은)부터 1보다 클 때까지, 나누기를 하여 나머지가 0이 되는 경우 계속해서 나눠줌
+  - 다 나눠진 값이 1일 경우 해당 횟수 출력, 그렇지 않은 경우 만들 수 없는 수
+  
+[2.Calculator](https://github.com/KimUJin3359/Stack-2-/tree/master/Calculator)
+- 연산자(+, \*) 및 괄호가 존재할 때 해당 연산의 결과값을 출력하는 문제
+- 접근 방법
+  - 해당 문자가 숫자인 경우, 숫자가 아닌 값이 나올 때까지 축적 후 atoi하여 number stack에 push
+  - (인 경우, 연산자 stack에 push
+  - )인 경우, (가 나올 떄 까지 연산자 하나 pop, 숫자 두개 pop하여 계산 후 그 결과값을 number stack에 push
+  - \*인 경우, 연산자 stack에 push(\*의 우선순위가 무엇보다 높기 때문에 앞에 있는 연산을 먼저 수행할 필요가 없음)
+  - +인 경우, 연산자 stack에 기존에 존재하던 연산자들 전부 pop(+의 우선순위가 가장 낮기 때문에 앞에 있던 연산들을 모두 수행 후 +연산 수행, (이 나오면 pop을 멈춤)
+  - 연산자 stack의 사이즈가 0이 될 때까지 pop하며 연산을 수행
+  
+[3.Highshelf](https://github.com/KimUJin3359/Stack-2-/tree/master/Highshelf)
+
+[4.Password](https://github.com/KimUJin3359/Stack-2-/tree/master/Password)
+
+[5.Sequence](https://github.com/KimUJin3359/Stack-2-/tree/master/Sequence)
