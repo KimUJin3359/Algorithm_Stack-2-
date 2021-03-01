@@ -16,11 +16,6 @@
 - 가지치기 : 해결책으로 이어질 것 같지 않는 경로를 따라가지 않음으로써 시도의 횟수를 줄임
 - 즉, 깊이우선 탐색은 모든 경로를 추적하는데 비해 백 트래킹은 불필요한 경로를 조기 차단
 
-### Divide and Conquer
-- Divide : 해결할 문제를 여러 개의 작은 부분으로 나눔
-- Conquer : 작은 부분을 각각 해결
-- Combine : 해결된 해답을 모음
-
 ### 정렬
 - 퀵 정렬
   - 주어진 배열을 두 개로 분할하고, 각각을 정렬
@@ -95,3 +90,9 @@ void quick_sort(int a[], int begin, int end)
 [5.Sequence](https://github.com/KimUJin3359/Stack-2-/tree/master/Sequence)
 - V개의 작업이 존재
 - 선행 작업이 끝나야 후행 작업을 할 수 있을 때, 일을 끝내는 순서를 출력하는 문제
+
+//
+### Divide and Conquer
+- Divide : 해결할 문제를 여러 개의 작은 부분으로 나눔
+- Conquer : 작은 부분을 각각 해결
+- Combine : 해결된 해답을 모음
