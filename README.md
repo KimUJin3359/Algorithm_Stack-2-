@@ -16,46 +16,6 @@
 - 가지치기 : 해결책으로 이어질 것 같지 않는 경로를 따라가지 않음으로써 시도의 횟수를 줄임
 - 즉, 깊이우선 탐색은 모든 경로를 추적하는데 비해 백 트래킹은 불필요한 경로를 조기 차단
 
-### 정렬
-- 퀵 정렬
-  - 주어진 배열을 두 개로 분할하고, 각각을 정렬
-  - 분할할 때 기준 아이템 중심으로 작은 것은 왼편, 큰 것은 오른편에 위치
-  - 그렇기 때문에, 합병 작업이 필요하지 않음
-```
-void swap(int &a, int &b)
-{
-  int temp = a;
-  a = b;
-  b = temp;
-}
-
-void quick_sort(int a[], int begin, int end)
-{
-  if (begin < end)
-  {
-    int p = a[(begin + end) / 2];
-    int i = begin;
-    int j = end;
-    
-    while (i <= j)
-    {
-      while (a[i] < p)
-        i++;
-      while (a[j] > p)
-        j--;
-      if (i <= j)
-      {
-        swap(data[i], data[j]);
-        i++;
-        j--;
-      }
-    }
-    quick_sort(a, i, right);
-    quick_sort(a, left, j);
-  }
-}
-```
-
 #### 관련 문제
 [1.Broken Calculator](https://github.com/KimUJin3359/Stack-2-/tree/master/Broken_Calculator)
 - 계산기의 버튼이 많이 고장 나서 몇 개의 숫자 버튼과 곱하기 버튼, 계산 버튼밖에 남아있지 않음
@@ -96,3 +56,43 @@ void quick_sort(int a[], int begin, int end)
 - Divide : 해결할 문제를 여러 개의 작은 부분으로 나눔
 - Conquer : 작은 부분을 각각 해결
 - Combine : 해결된 해답을 모음
+
+### 정렬
+- 퀵 정렬
+  - 주어진 배열을 두 개로 분할하고, 각각을 정렬
+  - 분할할 때 기준 아이템 중심으로 작은 것은 왼편, 큰 것은 오른편에 위치
+  - 그렇기 때문에, 합병 작업이 필요하지 않음
+```
+void swap(int &a, int &b)
+{
+  int temp = a;
+  a = b;
+  b = temp;
+}
+
+void quick_sort(int a[], int begin, int end)
+{
+  if (begin < end)
+  {
+    int p = a[(begin + end) / 2];
+    int i = begin;
+    int j = end;
+    
+    while (i <= j)
+    {
+      while (a[i] < p)
+        i++;
+      while (a[j] > p)
+        j--;
+      if (i <= j)
+      {
+        swap(data[i], data[j]);
+        i++;
+        j--;
+      }
+    }
+    quick_sort(a, i, right);
+    quick_sort(a, left, j);
+  }
+}
+```
